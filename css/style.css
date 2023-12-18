@@ -132,3 +132,7 @@ body{
     height: 10%;
     background-color: #f5eee8;
 }
+
+.input{
+    width: 100%;
+}

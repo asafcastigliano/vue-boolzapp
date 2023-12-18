@@ -3,6 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            newMessage: '',
+            index: 0,
             selectedContact: [],
             contacts: [
                 {
@@ -173,8 +175,17 @@ createApp({
     methods: {
 
 
-        showChat(contact) {
+        showChat(contact, i) {
             this.selectedContact = contact;
+            this.index = i;
+        },
+
+        addMessage() {
+            if (this.newMessage.trim() !== "") {
+                this.contacts[this.index].messages.push({date: "", message: this.newMessage, status: "sent"});
+                this.newMessage = "";
+                this.contacts[this.index].messages.push({date: "", message: "OK", status: "received"});
+            }
         }
 
 

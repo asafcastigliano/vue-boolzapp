@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="col-chats overflow-y-scroll">
-                                <div v-for="(contact, index) in contacts" :key="index" class="col-chat d-flex" @click="showChat(contact)">
+                                <div v-for="(contact, index) in contacts" :key="index" class="col-chat d-flex" @click="showChat(contact, index)">
                                     <div class="h-100 align-content-center d-flex flex-wrap">
                                         <img :src="contact.avatar" alt="" class="avatar-user"> 
                                     </div>
@@ -79,7 +79,11 @@
                                 </div>
                             </div>
                             
-                            <div class="col-input"></div>
+                            <div class="col-input">
+                                <div v-if="selectedContact.name != null">
+                                    <input type="text" class="input" v-model="newMessage" @keyup.enter="addMessage">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
