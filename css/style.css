@@ -34,7 +34,6 @@ body{
 }
 
 .col-8{
-    background-color: aqua;
 }
 
 .avatar-io{
@@ -104,4 +103,20 @@ body{
     height: 10%;
     background-color: #eaeaea;
     border-left: 1px solid #b1b1b3;
+}
+
+.col-messages{
+    height: 80%;
+    background-image: url("../img/mine.jpg");
+    background-size: cover;
+}
+
+.col-input{
+    height: 10%;
+    background-color: #f5eee8;
+}
+
+.div-message-sent{
+    max-width: 300px;
+    justify-content: end;
 }
