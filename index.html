@@ -26,12 +26,41 @@
                                     <i class="fa-solid fa-ellipsis-vertical m-2"></i>
                                 </div>
                             </div>
-                            <div class="col-notification d-flex">
-                                <div class="bg-white icon-notification justify-content-center align-content-center d-flex flex-wrap"><i class="fa-solid fa-bell-slash"></i></div>
-                                
+                            <div class="col-notification d-flex p-1">
+                                <div class="h-100 align-content-center d-flex flex-wrap col-icon-notification">
+                                    <div class="bg-white icon-notification justify-content-center align-content-center d-flex flex-wrap"><i class="fa-solid fa-bell-slash"></i></div>
+                                </div>
+                                <div class="h-100 align-content-center d-flex flex-wrap col-text-notification">
+                                    <div>
+                                        <span class="n-notification">
+                                            Ricevi notifiche di nuovi messaggi
+                                        </span>
+                                        <br>
+                                        <span class="n-desktop">
+                                            Attiva notifihce desktop
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-chats overflow-y-scroll">
+                                <div v-for="(cntcts, index) in contacts" :key="index" class="col-chat d-flex">
+                                    <div class="h-100 align-content-center d-flex flex-wrap">
+                                        <img :src="cntcts.avatar" alt="" class="avatar-user"> 
+                                    </div>
+                                    <div class="nameplate h-100 align-content-center d-flex flex-wrap">
+                                        {{cntcts.name}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-8"></div>
+                        <div class="col-8">
+                            <div class="col-user">
+                                <div class="d-flex">
+                                    <img src="./img/avatar_1.jpg" alt="" class="avatar-io">
+                                    <div class="h-100 align-content-center flex-wrap d-flex">Sofia</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

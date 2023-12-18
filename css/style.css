@@ -30,7 +30,7 @@ body{
 }
 
 .col-4{
-    background-color: blue;
+    background-color: #fefeff;
 }
 
 .col-8{
@@ -63,4 +63,45 @@ body{
     width: 50px;
     height: 50px;
     font-size: large;
+}
+
+.n-desktop{
+    font-size: smaller;
+}
+
+.n-notification{
+    margin-bottom: 0px;
+}
+
+.col-icon-notification{
+    width: 50px;
+}
+
+.col-text-notification{
+    width: 100%;
+    margin-left: 10px;
+}
+
+.col-chats{
+    height: 80%;
+}
+
+.avatar-user{
+    width: 55px;
+    border-radius: 50%;
+}
+
+.col-chat{
+    height: 10%;
+    padding-left: 5px;
+}
+
+.nameplate{
+    margin-left: 10px;
+}
+
+.col-user{
+    height: 10%;
+    background-color: #eaeaea;
+    border-left: 1px solid #b1b1b3;
 }
