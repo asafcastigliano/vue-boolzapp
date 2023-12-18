@@ -43,12 +43,12 @@
                                 </div>
                             </div>
                             <div class="col-chats overflow-y-scroll">
-                                <div v-for="(cntcts, index) in contacts" :key="index" class="col-chat d-flex" @click="showChat(cntcts)">
+                                <div v-for="(contact, index) in contacts" :key="index" class="col-chat d-flex" @click="showChat(contact)">
                                     <div class="h-100 align-content-center d-flex flex-wrap">
-                                        <img :src="cntcts.avatar" alt="" class="avatar-user"> 
+                                        <img :src="contact.avatar" alt="" class="avatar-user"> 
                                     </div>
                                     <div class="nameplate h-100 align-content-center d-flex flex-wrap">
-                                        {{cntcts.name}}
+                                        {{contact.name}}
                                     </div>
                                 </div>
                             </div>
@@ -56,13 +56,22 @@
                         <div class="col-8">
                             <div class="col-user">
                                 <div class="d-flex h-100 p-2">
-                                    <img src="./img/avatar_1.jpg" alt="" class="avatar-io">
-                                    <div class="h-100 align-content-center flex-wrap d-flex">Michele</div>
+                                    <div v-if="selectedContact.avatar">
+                                        <img :src="selectedContact.avatar" alt="avatar" class="avatar-io">
+                                    </div>
+                                    <div v-else class="w-100 justify-content-center h-100 align-items-center d-flex flex-wrap">
+                                        Seleziona un contatto
+                                    </div>
+                                    <div class="h-100 align-content-center flex-wrap d-flex">
+                                        <div v-if="selectedContact">
+                                            {{selectedContact.name}}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-messages">
                                 <div v-if="selectedContact">
-                                    <div v-for="(msg, index) in selectedContact.messages" :key="index" class="d-flex" :class="{'justify-content-end': msg.statuts === 'sent', '': msg.statuts === 'received'}">
+                                    <div v-for="(msg, index) in selectedContact.messages" :key="index" class="d-flex flex-wrap" :class="{'justify-content-end': msg.statuts === 'sent'}">
                                         <div class="message" :class="{'message-sent': msg.statuts === 'sent', 'message-received': msg.statuts === 'received'}">
                                             <p>{{ msg.message }}</p>
                                         </div>

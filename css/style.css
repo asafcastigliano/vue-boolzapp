@@ -111,11 +111,6 @@ body{
     background-size: cover;
 }
 
-.col-input{
-    height: 10%;
-    background-color: #f5eee8;
-}
-
 .message{
     max-width: 500px;
 }
@@ -126,4 +121,9 @@ body{
 
 .message-received{
     background-color: #ffffff;
+}
+
+.col-input{
+    height: 10%;
+    background-color: #f5eee8;
 }
