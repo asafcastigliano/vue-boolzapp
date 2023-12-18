@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="col-chats overflow-y-scroll">
-                                <div v-for="(cntcts, index) in contacts" :key="index" class="col-chat d-flex">
+                                <div v-for="(cntcts, index) in contacts" :key="index" class="col-chat d-flex" @click="showChat(cntcts)">
                                     <div class="h-100 align-content-center d-flex flex-wrap">
                                         <img :src="cntcts.avatar" alt="" class="avatar-user"> 
                                     </div>
@@ -61,13 +61,15 @@
                                 </div>
                             </div>
                             <div class="col-messages">
-                                <div class="div-message-sent">
-                                    <div class="message-sent">
-                                        
+                                <div v-if="selectedContact">
+                                    <div v-for="(msg, index) in selectedContact.messages" :key="index" class="d-flex" :class="{'justify-content-end': msg.statuts === 'sent', '': msg.statuts === 'received'}">
+                                        <div class="message" :class="{'message-sent': msg.statuts === 'sent', 'message-received': msg.statuts === 'received'}">
+                                            <p>{{ msg.message }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="div-message-received"></div>
                             </div>
+                            
                             <div class="col-input"></div>
                         </div>
                     </div>

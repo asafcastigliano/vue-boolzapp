@@ -116,7 +116,14 @@ body{
     background-color: #f5eee8;
 }
 
-.div-message-sent{
-    max-width: 300px;
-    justify-content: end;
+.message{
+    max-width: 500px;
+}
+
+.message-sent{
+    background-color: #d5f9bb;
+}
+
+.message-received{
+    background-color: #ffffff;
 }

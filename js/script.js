@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            selectedContact: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -170,6 +171,11 @@ createApp({
     },
 
     methods: {
+
+
+        showChat(contact) {
+            this.selectedContact = contact;
+        }
 
 
     }
