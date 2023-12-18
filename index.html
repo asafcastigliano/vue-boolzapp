@@ -71,8 +71,8 @@
                             </div>
                             <div class="col-messages">
                                 <div v-if="selectedContact">
-                                    <div v-for="(msg, index) in selectedContact.messages" :key="index" class="d-flex flex-wrap" :class="{'justify-content-end': msg.statuts === 'sent'}">
-                                        <div class="message" :class="{'message-sent': msg.statuts === 'sent', 'message-received': msg.statuts === 'received'}">
+                                    <div v-for="(msg, index) in selectedContact.messages" :key="index" class="d-flex flex-wrap" :class="{'justify-content-end': msg.status === 'sent'}">
+                                        <div class="message" :class="{'message-sent': msg.status === 'sent', 'message-received': msg.status === 'received'}">
                                             <p>{{ msg.message }}</p>
                                         </div>
                                     </div>

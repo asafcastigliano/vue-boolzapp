@@ -113,14 +113,19 @@ body{
 
 .message{
     max-width: 500px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
 }
 
 .message-sent{
     background-color: #d5f9bb;
+    margin-right: 10px;
 }
 
 .message-received{
     background-color: #ffffff;
+    margin-left: 10px;
 }
 
 .col-input{
